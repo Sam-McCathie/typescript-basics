@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import "./App.css";
+import List from "./components/List";
+
+interface Istate {
+  items: {
+    name: string;
+    image: string;
+    amount: number;
+    note?: string; // ? means optional
+  }[]; // [] means array
+}
 
 function App() {
+  const [items, setItems] = useState<Istate["items"]>([
+    {
+      name: "Carrots",
+      image:
+        "https://i5.walmartimages.ca/images/Enlarge/686/686/6000198686686.jpg",
+      amount: 3,
+      note: "The orange cucumber",
+    },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Grocery List</h1>
+      <List items={items} />
     </div>
   );
 }

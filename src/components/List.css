@@ -1,0 +1,12 @@
+li {
+  display: flex;
+}
+
+li > img {
+  height: 53px;
+}
+
+li > p:not(:first-child) {
+  width: 100px;
+  margin-left: 10px;
+}
