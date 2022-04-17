@@ -1,12 +1,25 @@
+.headings > span {
+  margin-left: 10px;
+  width: 100px;
+  text-decoration: underline;
+}
+
+ul > li:not(:first-child) {
+  margin-top: 10px;
+}
+
 li {
   display: flex;
+  background-color: azure;
+  width: 50%;
 }
 
 li > img {
   height: 53px;
+  width: 40.83px;
 }
 
 li > p:not(:first-child) {
-  width: 100px;
+  min-width: 100px;
   margin-left: 10px;
 }
